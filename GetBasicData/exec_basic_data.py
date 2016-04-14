@@ -20,6 +20,7 @@ else:
 start, end = '2007-05-02', '2016-04-11'             #variable here
 datadir_name = '_'.join(('data', start, end))
 datadir_path = ''.join(('../data/', datadir_name))
+
 if os.path.exists(datadir_path) == False:
     os.makedirs(datadir_path)
     symbolsDF[datadir_name] = False
