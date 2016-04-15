@@ -25,7 +25,7 @@ returnsDF = pd.DataFrame()
 for symbol in symbolsDF[symbolsDF['kal_logic']==True].symbols: #from trade_logic (added_pos_col)
     print(symbol)
     return_col = 'kal_returns'                                  #out
-    df = get_returns(symbol, return_col , pos_col='test_kal')   #pos from t_l (colname)
+    df = get_returns(symbol, return_col , pos_col='kal_pos')   #pos from t_l (colname)
     returnsDF[symbol] =df[return_col]
     symbolsDF[got_return_col][symbol] = True
     
