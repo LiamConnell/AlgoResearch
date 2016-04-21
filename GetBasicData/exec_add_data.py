@@ -5,9 +5,12 @@ import smoothing_fns as sf
 redo = ''
 
 #store variables for locations
-symbolsDF = pd.read_pickle('../data/symbolsDF.pkl')
-start, end = '2007-05-02', '2016-04-11'                        #variable here
-datadir_name = '_'.join(('data', start, end))
+symbolsdf = '../data/symbols2008DF.pkl'
+symbolsDF = pd.read_pickle(symbolsdf)
+
+datadir = 'data2008'
+start, end = '2007-05-02', '2016-04-11'             #variable here
+datadir_name = '_'.join((datadir, start, end))
 datadir_path = ''.join(('../data/', datadir_name))
 
 # simple smoothing function (regression with slope)
@@ -58,7 +61,7 @@ for symbol in symbolsDF[symbolsDF[symbolDFtag]==False].symbols:
     except:
         pass
     
-symbolsDF.to_pickle('../data/symbolsDF.pkl')
+symbolsDF.to_pickle(symbolsdf)
 
 
 
