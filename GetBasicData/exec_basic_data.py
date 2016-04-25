@@ -10,7 +10,8 @@ if os.path.exists('../data/') == False:
 symbolsdf = '../data/symbols2008DF.pkl'
 #create or load symbolsDF
 if os.path.exists(symbolsdf) == False:
-    sp = pd.read_csv('/Users/liamconnell/Downloads/HistoricalSP500.csv')
+    # go to http://siblisresearch.com/data/historical-components-sp-500/ and download the csv, change path below to the path that you save to
+    sp = pd.read_csv('~/Downloads/HistoricalSP500.csv')
     symbolsDF = pd.DataFrame(sp[sp['2008'] == 'X'].Ticker.tolist())
     symbolsDF.columns = ['symbols']
     symbolsDF.index = symbolsDF.symbols
