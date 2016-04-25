@@ -114,7 +114,7 @@ def run(x0=(200.,0.), P=500, R=0, Q=0, dt=1.0, data=None,
     xs, cov = [], []
     for n in range(data.shape[0]):
         row = data.iloc[n]
-        z = row['Close']
+        z = row['Adj Close']
         #z=np.array([z])
         R = (float(row['High'])-float(row['Low']))*2
         kf.predict( )
